@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox, ttk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
-#TEST MESSAGE HELLO
+
 
 
 class Text_redactor(Tk):
@@ -10,7 +10,7 @@ class Text_redactor(Tk):
     x_offset = 540
     y_offset = 100
     version = "1.1"
-    fonts = ["Arial", "Times", "Courier", "Helvetica"]
+    fonts = ["Arial", "Times", "Courier", "Helvetica"] # standart font's for unix and windows
     font_size = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
                  '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40',
                  '41', '42', '43', '44', '45', '46']
@@ -22,17 +22,20 @@ class Text_redactor(Tk):
         self.settings_close_button = None
         self.frame_button = None
         self.frame_combobox = None
-        self.combobox_font_size = None
-        self.settings = None
         self.combobox_fonts = None
+        self.combobox_font_size = None
+
+        self.settings = None
         self.settings_confirm_button = None
+
         self.internal_buffer = ""
 
         self.menu_bar = Menu(self)
         self.menu_tab_file = Menu(self.menu_bar)
         self.menu_tab_text = Menu(self.menu_bar)
         self.scroll_bar_y = Scrollbar(self)
-        self.text_field = Text(self)  # need dynamic fonts , focus in/out
+        self.text_field = Text(self)
+
         self.draw_window()
         self.mainloop()
 
